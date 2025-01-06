@@ -39,8 +39,8 @@ for r in range(rows):
 with Image() as img:
     for icon in icons:
         with Image(width=64, height=64, pseudo=icon) as item:
-            item.rotate(-6) # degrees
             img.image_add(item)
     img.background_color = "#b2b2b2"
     img.montage(thumbnail = "25x25%^ + 150+150", tile = "{0}x{1}".format(*dim))
+    img.rotate(-6, background=Color("#b2b2b2"))
     img.save(filename = "output/grid.png")
